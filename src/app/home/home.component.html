@@ -1,0 +1,29 @@
+<section class="home ">
+
+    
+    <h1>Click On The Card To See More Details</h1>
+    <div class="container">
+        <div class="row mt-5">
+          
+
+            <div class="col-lg-3 shadow mb-4" *ngFor="let product of productList">
+                <a [routerLink]="['/productDetails' ,product.id]">
+           <div class="product-card">
+            <div class="card-img w-100 ">
+                <img [src]="product.image" alt="" class="">
+            </div>
+            <div class="content">
+            <h5 class="fs-6">{{product.title}}</h5>
+             <!-- <h5>{{product.category}}</h5> -->
+             <h4>rate : {{product.rating.rate}}</h4>
+             <h6>{{product.price}}  L.E</h6>
+         </div>
+             </div>
+             
+</a>
+
+            
+            <button  (click) = "addToCart(product)" class="btn btn-primary" [routerLink]="['/cart' , product.id]">add to cart</button>
+        </div></div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+
+
+h1{
+    background: -webkit-linear-gradient( #eee, #333);
+}
+h3 , h4 , h5 , h6{
+    color:black;
+}
+img{
+    width:130px;
+    text-align: center;
+    /* margin-left: 2rem; */
+}
+.product-card{
+    height: 20rem;
+    border-radius: 10%;
+    border: 2px solid #eee;
+   
+}
+.product-card a{
+    text-decoration: none;
+    color:  #000 ;
+    font-size: 1rem !important;
+}
+.content{
+    position: relative;
+    top: 20%;
+}
+button{
+    float: right;
+}

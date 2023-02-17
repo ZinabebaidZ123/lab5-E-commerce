@@ -1,0 +1,59 @@
+
+<div class="container bg-white p-5 w-50 rounded-2 shadow">
+    <form [formGroup] = "productForm" (ngSubmit) = "submitForm()">
+    
+      <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="Name" aria-describedby="nameHelp" 
+        formControlName = "userName" [ngClass] = "{'border-danger' : productForm.controls['userName'].touched && productForm.controls['userName'].invalid}">
+      </div>
+      
+      <!-- validation for name-->
+      <div *ngIf = "productForm.controls['userName'].touched && productForm.controls['userName'].invalid">
+        <div class="form-text text-danger" id = "emailHelp" *ngIf = "productForm.controls['email']?.errors?.['required']">
+           user name is required
+        </div>
+        <div class="form-text text-danger" id = "emailHelp" *ngIf = "productForm.controls['email']?.errors?.['pattern']">
+          user name not contains any white space
+       </div>
+      </div>
+     
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="userEmail" 
+        formControlName = "email" [ngClass] = "{'border-danger' : productForm.controls['email'].touched && productForm.controls['email'].invalid}">
+       <!--  ------------------------------------------------------------ -->
+           <!-- //validation for email -->
+      </div> 
+      <div *ngIf = "productForm.controls['email'].touched && productForm.controls['email'].invalid">
+        <div class="form-text text-danger" id = "emailHelp" *ngIf = "productForm.controls['email']?.errors?.['required']">
+           Email is required
+        </div>
+        <div class="form-text text-danger" id = "emailHelp" *ngIf = "productForm.controls['email']?.errors?.['pattern']">
+          Email pattern is  invalid
+       </div>
+      </div>
+    <!-- --------------------------------------------------------------- -->
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" formControlName = "password" name = "password"
+        [ngClass] = "{'border-danger' : productForm.controls['password'].touched && productForm.controls['password'].invalid}">
+      </div>
+    
+       
+        <!-- validation for password-->
+    
+        <div *ngIf = "productForm.controls['password'].touched && productForm.controls['password'].invalid">
+          <div class="form-text text-danger" id = "emailHelp" *ngIf = "productForm.controls['password']?.errors?.['required']">
+             password is required
+          </div>
+    
+          <div class="form-text text-danger" id = "emailHelp" *ngIf = "productForm.controls['password']?.errors?.['pattern']">
+            password must contains at least 8 char , at least one upper case and at least one lower case
+         </div>
+    
+        </div>
+    
+    
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>

@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.product-card{
+    background-color: #fff;
+}
+
+.card-img img{
+    width:100%;
+  
+}
